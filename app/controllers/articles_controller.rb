@@ -3,7 +3,8 @@ class ArticlesController < ApplicationController
 
   def index
     #to grab all the articles, we are naming it articles
-    @articles = Article.all # grab all the articles
+    #@articles = Article.all # grab all the articles
+    @articles = Article.paginate(page: params[:page], per_page: 5)
   end
 
   def new
