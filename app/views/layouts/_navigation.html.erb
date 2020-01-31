@@ -34,7 +34,7 @@
           <% Category.all.each do |category| %>
             <li><%= link_to "#{category.name}", category_path(category)%></li>
           <% end %>
-          <% if logged_in? and current_user_admin? %>
+          <% if logged_in? and current_user.admin? %>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           <% end %>
